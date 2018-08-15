@@ -1,23 +1,18 @@
+var config = {
+  apiKey: "AIzaSyC3n8pajVi_JUCD9HcxEpifWCCSGqQreYk",
+  authDomain: "investment-charts.firebaseapp.com",
+  databaseURL: "https://investment-charts.firebaseio.com",
+  projectId: "investment-charts",
+  storageBucket: "investment-charts.appspot.com",
+  messagingSenderId: "131428049149"
+};
+
+firebase.initializeApp(config);
+var db = firebase.database();
+
 var app = new Vue({
   el: '#app',
-  data: {
-    menus: [
-      { 
-        icon: 'icon-note', 
-        label: 'Cadastro',
-        submenus: [
-          { link: 'investimentos', label: 'Investimentos' },
-          { link: 'titulos', label: 'Títulos' },
-          { link: 'corretoras', label: 'Corretoras' }
-        ]
-      },
-      { 
-        icon: 'icon-organization', 
-        label: 'Admin',
-        submenus: [
-          { link: 'usuarios', label: 'Usuários' },
-        ]
-      }
-    ]
+  firebase: {
+    menus: db.ref("menus")
   }
 })

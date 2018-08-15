@@ -49,14 +49,14 @@
             <ul class="nav nav-sidebar">
               <menu v-for="menu in menus" :menu="menu" ></menu>
             </ul>
-        </div>
+          </div>
       </div>
     </section>
   </div>
 
   <script id="menu" type="text/template">
     <li class="nav-parent">
-        <a href="#">
+      <a href="#">
           <i class="{{ menu.icon }}"></i>
           <span>{{ menu.label }}</span> 
           <span class="fa arrow"></span>
@@ -98,6 +98,8 @@
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/vue/components/menu.js"></script>
   <script src="assets/js/vue/components/submenu.js"></script>
+  <script src="assets/js/firebase.js"></script>
+  <script src="assets/js/vue/plugins/vuefire.js"></script>
   <script src="assets/js/vue/app.js"></script>
 </body>
 </html>
