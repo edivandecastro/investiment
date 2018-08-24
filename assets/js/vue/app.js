@@ -1,18 +1,12 @@
-var config = {
-  apiKey: "AIzaSyC3n8pajVi_JUCD9HcxEpifWCCSGqQreYk",
-  authDomain: "investment-charts.firebaseapp.com",
-  databaseURL: "https://investment-charts.firebaseio.com",
-  projectId: "investment-charts",
-  storageBucket: "investment-charts.appspot.com",
-  messagingSenderId: "131428049149"
-};
+import { MenuService } from './services/service.js';
 
-firebase.initializeApp(config);
-var db = firebase.database();
-
-var app = new Vue({
+new Vue({
   el: '#app',
-  firebase: {
-    menus: db.ref("menus")
+  data: {
+    menus: []
+  },
+  created: function() {
+    var menuService = new MenuService();
+    this.menus = menuService.getMenus();
   }
-})
+});

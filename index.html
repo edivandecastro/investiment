@@ -47,7 +47,7 @@
                 </div>
             </div>
             <ul class="nav nav-sidebar">
-              <menu v-for="menu in menus" :menu="menu" ></menu>
+              <menu v-for="menu in menus" :menu="menu" :key="menu.id" ></menu>
             </ul>
           </div>
       </div>
@@ -62,7 +62,7 @@
           <span class="fa arrow"></span>
         </a>
         <ul class="children collapse">
-          <submenu v-for="submenu in menu.submenus" :link="submenu.link" :label="submenu.label"></submenu>
+          <submenu v-for="submenu in menu.submenus" :link="submenu.link" :key="submenu.id" :label="submenu.label"></submenu>
         </ul>
       </li>
   </script>
@@ -99,7 +99,11 @@
   <script src="assets/js/vue/components/menu.js"></script>
   <script src="assets/js/vue/components/submenu.js"></script>
   <script src="assets/js/firebase.js"></script>
+  <script src="assets/js/firebase-firestore.js"></script>
   <script src="assets/js/vue/plugins/vuefire.js"></script>
-  <script src="assets/js/vue/app.js"></script>
+  <script src="assets/js/vue/plugins/vue-firestore.js"></script>
+  <script type="module" src="assets/js/vue/services/service.js"></script>
+  <script type="module" src="assets/js/vue/stores/menu.js"></script>
+  <script type="module" src="assets/js/vue/app.js"></script>
 </body>
 </html>
